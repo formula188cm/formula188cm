@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: formula188cm
+    buildCommand: null
+    staticPublishing: true
+    publishDir: . 

@@ -38,16 +38,14 @@ h1 {
 
 main {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 4rem;
-    flex-wrap: wrap;
-    text-align: center;
 }
 
 .book-preview {
-    flex: 1;
-    min-width: 300px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .book-preview img {
@@ -62,23 +60,42 @@ main {
     transform: scale(1.05);
 }
 
-.book-details {
+.option-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.card {
     flex: 1;
-    min-width: 300px;
-    text-align: center;
+    min-width: 280px;
+    max-width: 350px;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-h2 {
-    color: #000000;
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    color: #000000;
 }
 
-ul {
+.card ul {
     list-style: none;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
-li {
+.card li {
     margin-bottom: 1rem;
     color: #333333;
     display: flex;
@@ -106,6 +123,44 @@ li {
     transform: translateY(-2px);
 }
 
+.book-features {
+    margin-top: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature i {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: #333333;
+}
+
 /* Animations */
 .fade-in {
     animation: fadeIn 1s ease-in;
@@ -116,12 +171,8 @@ li {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -141,7 +192,12 @@ li {
         font-size: 2.5rem;
     }
 
-    main {
-        gap: 2rem;
+    .option-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
     }
 } 
